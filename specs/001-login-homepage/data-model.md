@@ -180,8 +180,17 @@ class AuthState with _$AuthState {
 
 | 欄位名稱 | 類型 | 必填 | 說明 |
 |---------|------|------|------|
-| `userAgent` | String? | ❌ | 使用者代理字串 |
-| `platform` | String? | ❌ | 平台資訊 (如 "iOS 17.0") |
+| `platform` | String | ✅ | 平台資訊 (如 "iOS 17.0", "Android 14") |
+| `userAgent` | String | ✅ | HTTP User-Agent 字串 |
+| `deviceId` | String? | ❌ | 裝置唯一識別碼 (用於多裝置管理) |
+| `appVersion` | String? | ❌ | App 版本號 (如 "1.0.0") |
+
+### 驗證規則
+
+- `platform`: 必須符合 "iOS X.X" 或 "Android XX" 格式
+- `userAgent`: 標準 HTTP User-Agent 字串,不可為空
+- `deviceId`: 若提供則用於識別同一裝置的多次登入
+- `appVersion`: 若提供則必須符合 SemVer 格式 (X.Y.Z)
 
 ### Dart 實作
 
@@ -219,8 +228,10 @@ class FacebookLoginRequest with _$FacebookLoginRequest {
 @freezed
 class DeviceInfo with _$DeviceInfo {
   const factory DeviceInfo({
-    @JsonKey(name: 'user_agent') String? userAgent,
-    String? platform,
+    required String platform,
+    @JsonKey(name: 'user_agent') required String userAgent,
+    @JsonKey(name: 'device_id') String? deviceId,
+    @JsonKey(name: 'app_version') String? appVersion,
   }) = _DeviceInfo;
   
   factory DeviceInfo.fromJson(Map<String, dynamic> json) =>
