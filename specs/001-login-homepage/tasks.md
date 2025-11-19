@@ -20,41 +20,41 @@
 
 ---
 
-## Phase 1: Setup (共享基礎設施)
+## Phase 1: Setup (共享基礎設施) ✅ COMPLETED
 
 **目的**: 專案初始化和基礎結構
 
-- [ ] T001 建立 Flutter 專案結構 (lib/core/, lib/features/, test/, integration_test/)
-- [ ] T002 初始化 pubspec.yaml 並加入核心相依套件 (riverpod, dio, retrofit, go_router, supabase_flutter, flutter_secure_storage, freezed, json_serializable, flutter_svg)
-- [ ] T003 [P] 建立環境變數設定檔 lib/config/env.dart (SUPABASE_URL, SUPABASE_ANON_KEY, API_BASE_URL)
-- [ ] T004 [P] 設定程式碼產生工具 build.yaml (freezed, retrofit, riverpod_annotation)
-- [ ] T005 [P] 配置 analysis_options.yaml (啟用嚴格模式, lint rules)
-- [ ] T006 [P] 建立 .env.example 範本檔案
-- [ ] T007 複製 SVG 圖示資產到 assets/icons/ 目錄 (17 個 SVG 檔案從 design-assets/)
-- [ ] T008 設定 Android deep link 在 android/app/src/main/AndroidManifest.xml (scheme: com.example.moneymanager)
-- [ ] T009 設定 iOS deep link 在 ios/Runner/Info.plist (CFBundleURLSchemes)
+- [X] T001 建立 Flutter 專案結構 (lib/core/, lib/features/, test/, integration_test/)
+- [X] T002 初始化 pubspec.yaml 並加入核心相依套件 (riverpod, dio, retrofit, go_router, supabase_flutter, flutter_secure_storage, freezed, json_serializable, flutter_svg)
+- [X] T003 [P] 建立環境變數設定檔 lib/config/env.dart (SUPABASE_URL, SUPABASE_ANON_KEY, API_BASE_URL)
+- [X] T004 [P] 設定程式碼產生工具 build.yaml (freezed, retrofit, riverpod_annotation)
+- [X] T005 [P] 配置 analysis_options.yaml (啟用嚴格模式, lint rules)
+- [X] T006 [P] 建立 .env.example 範本檔案
+- [X] T007 複製 SVG 圖示資產到 assets/icons/ 目錄 (17 個 SVG 檔案從 design-assets/)
+- [X] T008 設定 Android deep link 在 android/app/src/main/AndroidManifest.xml (scheme: com.example.moneymanager)
+- [X] T009 設定 iOS deep link 在 ios/Runner/Info.plist (CFBundleURLSchemes)
 
 ---
 
-## Phase 2: Foundational (必要前置條件)
+## Phase 2: Foundational (必要前置條件) ✅ COMPLETED
 
 **目的**: 核心基礎設施,**必須**在任何使用者故事開始前完成
 
 **⚠️ 關鍵**: 在此階段完成前,無法開始任何使用者故事工作
 
-- [ ] T010 建立 Material 3 主題設定 lib/core/theme/app_theme.dart (13 種顏色, 4 種文字樣式)
-- [ ] T011 [P] 建立設計 tokens lib/core/theme/design_tokens.dart (顏色常數, 間距標準, 圓角標準)
-- [ ] T012 [P] 實作 Supabase 初始化服務 lib/core/auth/supabase_service.dart (初始化 Supabase client)
-- [ ] T013 實作 Dio 設定 lib/core/api/dio_config.dart (base URL, timeout, 連線池)
-- [ ] T014 實作 API 客戶端介面 lib/core/api/api_client.dart (Retrofit 抽象類別,定義 7 個端點)
-- [ ] T015 [P] 實作 AuthInterceptor lib/core/api/interceptors/auth_interceptor.dart (自動附加 Bearer token)
-- [ ] T016 [P] 實作 RefreshTokenInterceptor lib/core/api/interceptors/refresh_interceptor.dart (401 自動刷新 token)
-- [ ] T017 [P] 實作 ErrorInterceptor lib/core/api/interceptors/error_interceptor.dart (統一錯誤處理)
-- [ ] T018 實作 SecureStorageService lib/core/storage/secure_storage_service.dart (封裝 flutter_secure_storage, 提供 saveTokens/getTokens/clearAuth)
-- [ ] T019 執行程式碼產生 `flutter pub run build_runner build --delete-conflicting-outputs`
-- [ ] T020 建立 Go Router 路由設定 lib/core/routing/app_router.dart (路由定義: /, /home; 認證守衛)
+- [X] T010 建立 Material 3 主題設定 lib/core/theme/app_theme.dart (13 種顏色, 4 種文字樣式)
+- [X] T011 [P] 建立設計 tokens lib/core/theme/design_tokens.dart (顏色常數, 間距標準, 圓角標準)
+- [X] T012 [P] 實作 Supabase 初始化服務 lib/core/auth/supabase_service.dart (初始化 Supabase client)
+- [X] T013 實作 Dio 設定 lib/core/api/dio_config.dart (base URL, timeout, 連線池)
+- [X] T014 實作 API 客戶端介面 lib/core/api/api_client.dart (Retrofit 抽象類別,定義 7 個端點)
+- [X] T015 [P] 實作 AuthInterceptor lib/core/api/interceptors/auth_interceptor.dart (自動附加 Bearer token)
+- [X] T016 [P] 實作 RefreshTokenInterceptor lib/core/api/interceptors/refresh_interceptor.dart (401 自動刷新 token)
+- [X] T017 [P] 實作 ErrorInterceptor lib/core/api/interceptors/error_interceptor.dart (統一錯誤處理)
+- [X] T018 實作 SecureStorageService lib/core/storage/secure_storage_service.dart (封裝 flutter_secure_storage, 提供 saveTokens/getTokens/clearAuth)
+- [X] T019 執行程式碼產生 `flutter pub run build_runner build --delete-conflicting-outputs`
+- [X] T020 建立 Go Router 路由設定 lib/core/routing/app_router.dart (路由定義: /, /home; 認證守衛)
 
-**Checkpoint**: 基礎設施就緒 - 使用者故事實作現在可以並行開始
+**Checkpoint**: ✅ 基礎設施就緒 - 使用者故事實作現在可以並行開始
 
 ---
 
